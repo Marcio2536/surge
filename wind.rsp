@@ -1,0 +1,18 @@
+{
+    "data": {
+        "ignore_udp_tests": 1,
+        "username": "chinaoutbreakvirus",
+        "user_id": "pig2hbmt",
+        "traffic_used": 0,
+        "traffic_max": 10737418240,
+        "status": 1,
+        "email": "ksw74548@cuoly.com",
+        "email_status": 1,
+        "billing_plan_id": -1,
+        "is_premium": 1,
+        "reg_date": 1614918312,
+        "last_reset": "2021-03-04",
+        "loc_rev": 14599,
+        "loc_hash": "31905b9d43613607294857dc36292b08e4c14e80"
+    }
+}
