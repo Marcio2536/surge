@@ -1,0 +1,22 @@
+#!name=Cloudflare Accelerator
+#!desc=Accelerate websites which are blocked in China
+
+[Rewrite]
+# Duckduckgo search
+^https?:\/\/duckduckgo\.com https://dugo.marcio.workers.dev 302
+# Nytimes
+^https?:\/\/www\.nytimes\.com https://nytutc.marcio.workers.dev 302
+# Appledaily
+^https?:\/\/hk\.appledaily\.com https://ak8jx.marcio.workers.dev 302
+# Wikipedia
+^https?:\/\/zh\.m\.wikipedia\.org https://zhvk.marcio.workers.dev 302
+^https?:\/\/en\.m\.wikipedia\.org https://envk.marcio.workers.dev 302
+# Github Accelerator
+^https:\/\/raw.githubusercontent.com https://cf.marcio.workers.dev 307
+# Epochtimes
+^https?:\/\/www\.epochtimes\.com https://a2cio.marcio.workers.dev 302
+^https?:\/\/i\.epochtimes\.com https://a2cio.marcio.workers.dev 302
+^https?:\/\/hk\.epochtimes\.com https://sp2c.marcio.workers.dev 302
+^https?:\/\/www\.theepochtimes\.com https://t3rss.marcio.workers.dev 302
+[MITM]
+hostname = duckduckgo.com, www.nytimes.com, hk.appledaily.com, *.wikipedia.org, raw.githubusercontent.com, *.epochtimes.com
