@@ -1,7 +1,7 @@
 #!name=Cloudflare Accelerator
 #!desc=Accelerate websites which are blocked in China
 
-[Rewrite]
+[URL Rewrite]
 # Duckduckgo search
 ^https?:\/\/duckduckgo\.com https://dugo.marcio.workers.dev 302
 # Nytimes
