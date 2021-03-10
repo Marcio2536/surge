@@ -18,5 +18,6 @@
 ^https?:\/\/i\.epochtimes\.com https://a2cio.marcio.workers.dev 302
 ^https?:\/\/hk\.epochtimes\.com https://sp2c.marcio.workers.dev 302
 ^https?:\/\/www\.theepochtimes\.com https://t3rss.marcio.workers.dev 302
+
 [MITM]
-hostname = duckduckgo.com, www.nytimes.com, hk.appledaily.com, *.wikipedia.org, raw.githubusercontent.com, *.epochtimes.com
+hostname = %APPEND% duckduckgo.com, www.nytimes.com, hk.appledaily.com, *.wikipedia.org, raw.githubusercontent.com, *.epochtimes.com
