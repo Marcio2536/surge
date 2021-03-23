@@ -5,7 +5,7 @@
 # Duckduckgo search
 ^https?:\/\/duckduckgo\.com https://dugo.marcio.workers.dev 302
 # Nytimes
-^https?:\/\/www\.nytimes\.com https://nytutc.marcio.workers.dev 302
+^https?:\/\/.*\.nytimes\.com https://nytutc.marcio.workers.dev 302
 # Appledaily
 ^https?:\/\/hk\.appledaily\.com https://ak8jx.marcio.workers.dev 302
 # Wikipedia
@@ -20,8 +20,9 @@
 ^https?:\/\/www\.theepochtimes\.com https://t3rss.marcio.workers.dev 302
 ^https?:\/\/www\.ntdtv\.com https://k2dsp.marcio.workers.dev 302
 ^https?:\/\/dafahao\.com https://u7xsd.marcio.workers.dev 302
+^https?:\/\/www\.minghui\.org https://nk3d4.marcio.workers.dev 302
 
 
 
 [MITM]
-hostname = %APPEND% duckduckgo.com, www.nytimes.com, hk.appledaily.com, *.wikipedia.org, raw.githubusercontent.com, *.epochtimes.com, www.ntdtv.com, dafahao.com
+hostname = %APPEND% duckduckgo.com, *.nytimes.com, hk.appledaily.com, *.wikipedia.org, raw.githubusercontent.com, *.epochtimes.com, www.ntdtv.com, dafahao.com, www.minghui.org
