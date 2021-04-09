@@ -1,0 +1,57 @@
+#!name=Bypass Paywall
+#!desc=Bypass Paywall on Surge ios
+
+[Rule]
+URL-REGEX,^https:\/\/ocbj\.media\.clients\.ellingtoncms\.com\/.*\/.*\.png$,REJECT
+URL-REGEX,^https:\/\/player\.cnevids\.com\/script\/video\/.*,REJECT
+DOMAIN,metering.platform.latimes.com,REJECT
+URL-REGEX,^https:\/\/blog\.csdn\.net\/sw\.js$,REJECT
+DOMAIN-SUFFIX,openinstall.io,REJECT
+URL-REGEX,^https:\/\/caltimes-lat-marketing-assets-dev\.s3-us-west-2\.amazonaws\.com\/subscriptions\/ad-arc-ears\/img\/bg-tan-palms-mobile\.gif$,REJECT 
+URL-REGEX,^https:\/\/assets\.bwbx\.io\/s3\/fence\/v4\/.*js$,REJECT
+
+[URL Rewrite]
+.+\.blueconic\.net\/.+ - reject
+.+\.medscapestatic\.com\/.*medscape-library\.js - reject
+.+\.tinypass\.com\/.+ - reject
+.+\.washingtonpost\.com\/.+\/pwapi-proxy\.min\.js - reject
+(.+\.tinypass\.com\/.+|cdn\.onesignal\.com\/sdks\/.+\.js) - reject
+^https://(.*)\.wsj\.com/articles/ https://$1\.wsj\.com/amp/articles/ 307
+cdn\.ampproject\.org\/v\d\/amp-access-.+\.js - reject
+.+telegraph\.co\.uk.+martech.+ - reject
+(.+\.tinypass\.com\/.+|economist\.com\/engassets\/_next\/static\/chunks\/framework.+\.js) - reject
+
+
+[Header Rewrite]
+https?://labusinessjournal.com header-replace User-Agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+https?://labusinessjournal.com header-del Cookie
+https?://.*\.newyorker.com header-replace User-Agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+https?://www.latimes.com header-replace User-Agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+https?://www.latimes.com header-del Cookie
+^https:\/\/post\.smzdm\.com\/ header-replace User-Agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
+^https:\/\/blog\.csdn\.net\/ header-replace User-Agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36$2 "
+https?://.*\.scmp.com header-replace Cookie "scmp_subscriber=true; __adblocker="false""
+https?://www\.wired\.com header-replace User-Agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+cdn\.ampproject\.org header-del Cookie
+https?://.*\.wsj.com header-del Cookie
+https?://telegraph.co.uk header-replace User-Agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+https?://medium.com header-del Cookie
+https?://www.quora.com header-del Cookie
+https?://.*\.sina.cn header-del Content-Type
+https?://.*\.sina.com.cn header-del Content-Type
+https?://.*\.douban.com header-replace Accept text/html,website/xhtml+xml,website/xml;q=0.9,*/*;q=0.8
+https?://.*\.douban\.com header-replace User-Agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
+https?://.*\.douban.com header-del Cookie
+https?://.*\.sina.cn header-del Cookie
+https?://.*\.sina.com.cn header-del Cookie
+https?://.*\.sina.cn header-replace User-Agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+https?://.*\.sina.com.cn header-replace User-Agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+https?://.*\.ft\.com header-replace User-Agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+^https://theinitium.com header-del User-Agent
+^https://theinitium.com header-add Cookie "Mozilla / 5.0(Linux; Android 6.0.1; Nexus 5X Build / MMB29P) AppleWebKit / 537.36(KHTML, like Gecko) Chrome / 80.0.3987.92 Mobile Safari / 537.36(compatible; Googlebot / 2.1; +http://www.google.com/bot.html)Accept-Language: en-us"
+https?:\/\/.*\.bloomberg\.com header-del Cookie
+https?://www.washingtonpost.com header-del Cookie
+https?://.*\.nytimes\.com header-del Cookie
+
+[MITM]
+hostname = %APPEND% ocbj.media.clients.ellingtoncms.com, labusinessjournal.com, *.newyorker.com, *.latimes.com, *.smzdm.com, post.m.smzdm.com, *.blueconic.net, *.medscapestatic.com, *.scmp.com, www.wired.com, cdn.ampproject.org, *.telegraph.co.uk, *.tinypass.com, medium.com, www.quora.com, *.douban.com, *.sina.com.cn, *.sina.cn, *bwbx.io, *.bloomberg.com, theinitium.com, *.wsj.com, *.theinitium.com, www.washingtonpost.com
