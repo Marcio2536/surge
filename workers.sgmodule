@@ -21,8 +21,8 @@
 ^https?:\/\/www\.ntdtv\.com https://k2dsp.marcio.workers.dev 302
 ^https?:\/\/dafahao\.com https://u7xsd.marcio.workers.dev 302
 ^https?:\/\/www\.minghui\.org https://nk3d4.marcio.workers.dev 302
-
-
+^https?:\/\/www\.falundafa\.org https://sd23d.marcio.workers.dev 302
+^https?:\/\/big5\.falundafa\.org https://tas2p.marcio.workers.dev 302
 
 [MITM]
-hostname = %APPEND% duckduckgo.com, *.nytimes.com, hk.appledaily.com, *.wikipedia.org, raw.githubusercontent.com, *.epochtimes.com, www.ntdtv.com, dafahao.com, www.minghui.org
+hostname = %APPEND% duckduckgo.com, *.nytimes.com, hk.appledaily.com, *.wikipedia.org, raw.githubusercontent.com, *.epochtimes.com, www.ntdtv.com, dafahao.com, www.minghui.org, *.falundafa.org
