@@ -9,6 +9,11 @@ URL-REGEX,^https:\/\/blog\.csdn\.net\/sw\.js$,REJECT
 DOMAIN-SUFFIX,openinstall.io,REJECT
 URL-REGEX,^https:\/\/caltimes-lat-marketing-assets-dev\.s3-us-west-2\.amazonaws\.com\/subscriptions\/ad-arc-ears\/img\/bg-tan-palms-mobile\.gif$,REJECT 
 URL-REGEX,^https:\/\/assets\.bwbx\.io\/s3\/fence\/v4\/.*js$,REJECT
+DOMAIN,analytics.appledaily.com.hk,REJECT
+DOMAIN-SUFFIX,queryly.com,REJECT
+DOMAIN-SUFFIX,azureedge.net,REJECT
+URL-REGEX,^https:\/\/zephr\.technologyreview\.com\/wp-json\/.*,REJECT
+DOMAIN-SUFFIX,thirdwx.qlogo.cn,REJECT
 
 [URL Rewrite]
 .+\.blueconic\.net\/.+ - reject
@@ -23,6 +28,9 @@ cdn\.ampproject\.org\/v\d\/amp-access-.+\.js - reject
 
 
 [Header Rewrite]
+https?://.*\.technologyreview\.com header-replace User-Agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+https?://.*\.technologyreview\.com header-del Cookie
+https?://hk\.(feature\.)?appledaily\.com header-del Cookie
 https?://labusinessjournal.com header-replace User-Agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
 https?://labusinessjournal.com header-del Cookie
 https?://.*\.newyorker.com header-replace User-Agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
@@ -54,4 +62,7 @@ https?://www.washingtonpost.com header-del Cookie
 https?://.*\.nytimes\.com header-del Cookie
 
 [MITM]
-hostname = %APPEND% ocbj.media.clients.ellingtoncms.com, labusinessjournal.com, *.newyorker.com, *.latimes.com, *.smzdm.com, post.m.smzdm.com, *.blueconic.net, *.medscapestatic.com, *.scmp.com, www.wired.com, cdn.ampproject.org, *.telegraph.co.uk, *.tinypass.com, medium.com, www.quora.com, *.douban.com, *.sina.com.cn, *.sina.cn, *bwbx.io, *.bloomberg.com, theinitium.com, *.wsj.com, *.theinitium.com, www.washingtonpost.com
+hostname = %APPEND% *.technologyreview.com, *.appledaily.com, ocbj.media.clients.ellingtoncms.com, labusinessjournal.com, *.newyorker.com, *.latimes.com, *.smzdm.com, post.m.smzdm.com, *.blueconic.net, *.medscapestatic.com, *.scmp.com, www.wired.com, cdn.ampproject.org, *.telegraph.co.uk, *.tinypass.com, medium.com, www.quora.com, *.douban.com, *.sina.com.cn, *.sina.cn, *bwbx.io, *.bloomberg.com, theinitium.com, *.wsj.com, *.theinitium.com, www.washingtonpost.com
+
+[Script]
+蘋果日報 = type=http-response,pattern=https?:\/\/hk\.(feature\.)?appledaily\.com/(local|breaking|finance|international|china|sports|racing|wars|columnist|culture|entertainment|special)/.*,requires-body=1,max-size=-1,control-api=1,script-path=https://raw.githubusercontent.com/Marcio2536/surge/main/HK.js,script-update-interval=0
