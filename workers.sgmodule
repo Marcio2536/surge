@@ -8,6 +8,7 @@
 ^https?:\/\/.*\.nytimes\.com https://nytutc.marcio.workers.dev 302
 # Appledaily
 ^https?:\/\/hk\.appledaily\.com https://ak8jx.marcio.workers.dev 302
+^https?:\/\/hk\.feature\.appledaily\.com https://bk3dt.marcio.workers.dev 302
 # Wikipedia
 ^https?:\/\/zh\.m\.wikipedia\.org https://zhvk.marcio.workers.dev 302
 ^https?:\/\/en\.m\.wikipedia\.org https://envk.marcio.workers.dev 302
@@ -25,4 +26,8 @@
 ^https?:\/\/big5\.falundafa\.org https://tas2p.marcio.workers.dev 302
 
 [MITM]
-hostname = %APPEND% duckduckgo.com, *.nytimes.com, hk.appledaily.com, *.wikipedia.org, raw.githubusercontent.com, *.epochtimes.com, www.ntdtv.com, dafahao.com, www.minghui.org, *.falundafa.org
+hostname = %APPEND% duckduckgo.com, *.nytimes.com, hk.appledaily.com, *.wikipedia.org, raw.githubusercontent.com, *.epochtimes.com, www.ntdtv.com, dafahao.com, www.minghui.org, *.falundafa.org, ak8jx.marcio.workers.dev, bk3dt.marcio.workers.dev
+
+[Script]
+蘋果日報 = type=http-response,pattern=https?:\/\/ak8jx\.marcio\.workers\.dev/(local|breaking|finance|international|china|sports|racing|wars|columnist|culture|entertainment|special)/.*,requires-body=1,max-size=-1,control-api=1,script-path=https://raw.githubusercontent.com/Marcio2536/surge/main/HK.js,script-update-interval=0
+蘋果日報 = type=http-response,pattern=https?:\/\/bk3dt\.marcio\.workers\.dev/wars/.*,requires-body=1,max-size=-1,control-api=1,script-path=https://raw.githubusercontent.com/Marcio2536/surge/main/HK.js,script-update-interval=0
