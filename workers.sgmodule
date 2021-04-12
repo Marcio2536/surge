@@ -30,4 +30,3 @@ hostname = %APPEND% duckduckgo.com, *.nytimes.com, hk.appledaily.com, *.wikipedi
 
 [Script]
 蘋果日報 = type=http-response,pattern=https?:\/\/ak8jx\.marcio\.workers\.dev/(local|breaking|finance|international|china|sports|racing|wars|columnist|culture|entertainment|special)/.*,requires-body=1,max-size=-1,control-api=1,script-path=https://raw.githubusercontent.com/Marcio2536/surge/main/HK.js,script-update-interval=0
-蘋果日報 = type=http-response,pattern=https?:\/\/bk3dt\.marcio\.workers\.dev/wars/article/.*,requires-body=1,max-size=-1,control-api=1,script-path=https://raw.githubusercontent.com/Marcio2536/surge/main/HK.js,script-update-interval=0
