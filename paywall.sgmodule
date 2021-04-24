@@ -2,6 +2,13 @@
 #!desc=Bypass Paywall on Surge ios
 
 [Rule]
+URL-REGEX,^https:\/\/api\.theage\.com\.au\/graphql.*,REJECT
+URL-REGEX,^https:\/\/www\.haaretz\.com\/_next\/static\/.*app.js,REJECT
+URL-REGEX,^https:\/\/www\.thetimes\.co\.uk\/d\/js\/.*bundle.*$,REJECT
+URL-REGEX,^https:\/\/assets\.bizjournals\.com\/dist\/.*$,REJECT
+URL-REGEX,^https:\/\/www\.thestar\.com\/static\/bundle.js.*$,REJECT
+DOMAIN-SUFFIX,pelcro.com,REJECT
+DOMAIN,experience.tinypass.com,REJECT
 URL-REGEX,^https:\/\/ocbj\.media\.clients\.ellingtoncms\.com\/.*\/.*\.png$,REJECT
 URL-REGEX,^https:\/\/player\.cnevids\.com\/script\/video\/.*,REJECT
 DOMAIN,metering.platform.latimes.com,REJECT
@@ -16,6 +23,8 @@ URL-REGEX,^https:\/\/zephr\.technologyreview\.com\/wp-json\/.*,REJECT
 DOMAIN-SUFFIX,thirdwx.qlogo.cn,REJECT
 
 [URL Rewrite]
+https?://api.afr.com/graphql.* - reject
+https?://thediplomat\.com https://tdp.marcio.workers.dev 302
 .+\.blueconic\.net\/.+ - reject
 .+\.medscapestatic\.com\/.*medscape-library\.js - reject
 .+\.tinypass\.com\/.+ - reject
@@ -28,6 +37,33 @@ cdn\.ampproject\.org\/v\d\/amp-access-.+\.js - reject
 
 
 [Header Rewrite]
+https://.*\.theage.com.au header-add X-Forwarded-For 66.249.66.1
+https://.*\.theage.com.au header-replace User-Agent "Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible ; Googlebot/2.1 ; +http://www.google.com/bot.html)"
+https://.*\.theage.com.au header-del Cookie
+https?://www.dailytelegraph.com.au header-add X-Forwarded-For 66.249.66.1
+https?://www.dailytelegraph.com.au header-replace User-Agent "Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible ; Googlebot/2.1 ; +http://www.google.com/bot.html)"
+https?://www.dailytelegraph.com.au header-del Cookie
+^https:\/\/www\.jianshu\.com header-replace User-Agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
+https?://www.theaustralian.com.au header-add X-Forwarded-For 66.249.66.1
+https?://www.theaustralian.com.au header-replace User-Agent "Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible ; Googlebot/2.1 ; +http://www.google.com/bot.html)"
+https?://www.theaustralian.com.au header-del Cookie
+https?://www.thetimes.co.uk header-add X-Forwarded-For 66.249.66.1
+https?://www.thetimes.co.uk header-replace User-Agent "Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible ; Googlebot/2.1 ; +http://www.google.com/bot.html)"
+https?://www.thetimes.co.uk header-del Cookie
+https?://www\.theatlantic\.com header-del Cookie
+https?://qz.com header-del If-None-Match
+https://.*\.ft\.com header-del Cookie
+https://.*\.ft\.com header-replace Referer https://t.co/x?amp=1
+https?://.*\.ft\.com header-replace User-Agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+sloanreview.mit.edu header-replace Referer https://t.co/x?amp=1
+https?://qz.com header-add X-Forwarded-For 66.249.66.1
+https?://qz.com header-replace Referer https://t.co/x?amp=1
+https?://qz.com header-del Cookie
+https?://qz.com header-replace User-Agent "Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible ; Googlebot/2.1 ; +http://www.google.com/bot.html)"
+https?://hbr.org header-del Cookie
+https?://asia.nikkei.com header-del Cookie
+https://www\.techinasia\.com header-replace User-Agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+https?://www\.techinasia\.com header-del Cookie
 https?://.*\.technologyreview\.com header-replace User-Agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
 https?://.*\.technologyreview\.com header-del Cookie
 https?://hk\.(feature\.)?appledaily\.com header-del Cookie
@@ -62,7 +98,7 @@ https?://www.washingtonpost.com header-del Cookie
 https?://.*\.nytimes\.com header-del Cookie
 
 [MITM]
-hostname = %APPEND% *.technologyreview.com, *.appledaily.com, ocbj.media.clients.ellingtoncms.com, labusinessjournal.com, *.newyorker.com, *.latimes.com, *.smzdm.com, post.m.smzdm.com, *.blueconic.net, *.medscapestatic.com, *.scmp.com, www.wired.com, cdn.ampproject.org, *.telegraph.co.uk, *.tinypass.com, medium.com, www.quora.com, *.douban.com, *.sina.com.cn, *.sina.cn, *bwbx.io, *.bloomberg.com, theinitium.com, *.wsj.com, *.theinitium.com, www.washingtonpost.com
+hostname = %APPEND% *.theage.com.au, www.dailytelegraph.com.au, www.theaustralian.com.au, www.thetimes.co.uk, www.haaretz.com, www.thestar.com, assets.bizjournals.com, www.theatlantic.com, *.ft.com, sloanreview.mit.edu, qz.com, api.afr.com, hbr.org, asia.nikkei.com, www.techinasia.com, thediplomat.com, qz.com, *.technologyreview.com, *.appledaily.com, ocbj.media.clients.ellingtoncms.com, labusinessjournal.com, *.newyorker.com, *.latimes.com, *.smzdm.com, post.m.smzdm.com, *.blueconic.net, *.medscapestatic.com, *.scmp.com, www.wired.com, cdn.ampproject.org, *.telegraph.co.uk, *.tinypass.com, medium.com, www.quora.com, *.douban.com, *.sina.com.cn, *.sina.cn, *bwbx.io, *.bloomberg.com, theinitium.com, *.wsj.com, *.theinitium.com, www.washingtonpost.com
 
 [Script]
 蘋果日報 = type=http-response,pattern=https?:\/\/hk\.(feature\.)?appledaily\.com/(local|breaking|finance|international|china|sports|racing|wars|columnist|culture|entertainment|special)/.*,requires-body=1,max-size=-1,control-api=1,script-path=https://raw.githubusercontent.com/Marcio2536/surge/main/HK.js,script-update-interval=0
