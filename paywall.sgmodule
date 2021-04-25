@@ -49,6 +49,12 @@ cdn\.ampproject\.org\/v\d\/amp-access-.+\.js - reject
 
 
 [Header Rewrite]
+https?://www.geelongadvertiser.com.au header-add X-Forwarded-For 66.249.66.1
+https?://www.geelongadvertiser.com.au header-replace User-Agent "Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible ; Googlebot/2.1 ; +http://www.google.com/bot.html)"
+https?://www.geelongadvertiser.com.au header-del Cookie
+https?://www.goldcoastbulletin.com.au header-add X-Forwarded-For 66.249.66.1
+https?://www.goldcoastbulletin.com.au header-replace User-Agent "Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible ; Googlebot/2.1 ; +http://www.google.com/bot.html)"
+https?://www.goldcoastbulletin.com.au header-del Cookie
 https?://thediplomat\.com header-del Cookie
 https?://(.*)?towardsdatascience.com header-del Cookie
 https?://www.adelaidenow.com.au header-add X-Forwarded-For 66.249.66.1
@@ -130,7 +136,7 @@ https?://www.washingtonpost.com header-del Cookie
 https?://.*\.nytimes\.com header-del Cookie
 
 [MITM]
-hostname = %APPEND%  www.nzherald.co.nz, api.brisbanetimes.com.au, www.barrons.com, cse.google.com, apis.google.com, thediplomat.com, towardsdatascience.com, *.towardsdatascience.com, api.smh.com.au, www.adelaidenow.com.au, www.ntnews.com.au, www.themercury.com.au, www.couriermail.com.au, www.scientificamerican.com, www.foreignaffairs.com, www.fnlondon.com, api.theage.com.au, www.dailytelegraph.com.au, www.theaustralian.com.au, www.thetimes.co.uk, www.haaretz.com, www.thestar.com, assets.bizjournals.com, www.theatlantic.com, *.ft.com, sloanreview.mit.edu, qz.com, api.afr.com, hbr.org, asia.nikkei.com, www.techinasia.com, thediplomat.com, qz.com, *.technologyreview.com, *.appledaily.com, labusinessjournal.com, *.newyorker.com, *.latimes.com, *.smzdm.com, post.m.smzdm.com, *.blueconic.net, *.medscapestatic.com, *.scmp.com, www.wired.com, cdn.ampproject.org, *.telegraph.co.uk, *.tinypass.com, medium.com, www.quora.com, *.douban.com, *.sina.com.cn, *.sina.cn, *bwbx.io, *.bloomberg.com, theinitium.com, *.wsj.com, *.theinitium.com, www.washingtonpost.com
+hostname = %APPEND%  www.geelongadvertiser.com.au, www.goldcoastbulletin.com.au, www.nzherald.co.nz, api.brisbanetimes.com.au, www.barrons.com, cse.google.com, apis.google.com, thediplomat.com, towardsdatascience.com, *.towardsdatascience.com, api.smh.com.au, www.adelaidenow.com.au, www.ntnews.com.au, www.themercury.com.au, www.couriermail.com.au, www.scientificamerican.com, www.foreignaffairs.com, www.fnlondon.com, api.theage.com.au, www.dailytelegraph.com.au, www.theaustralian.com.au, www.thetimes.co.uk, www.haaretz.com, www.thestar.com, assets.bizjournals.com, www.theatlantic.com, *.ft.com, sloanreview.mit.edu, qz.com, api.afr.com, hbr.org, asia.nikkei.com, www.techinasia.com, thediplomat.com, qz.com, *.technologyreview.com, *.appledaily.com, labusinessjournal.com, *.newyorker.com, *.latimes.com, *.smzdm.com, post.m.smzdm.com, *.blueconic.net, *.medscapestatic.com, *.scmp.com, www.wired.com, cdn.ampproject.org, *.telegraph.co.uk, *.tinypass.com, medium.com, www.quora.com, *.douban.com, *.sina.com.cn, *.sina.cn, *bwbx.io, *.bloomberg.com, theinitium.com, *.wsj.com, *.theinitium.com, www.washingtonpost.com
 
 [Script]
 蘋果日報 = type=http-response,pattern=https?:\/\/hk\.(feature\.)?appledaily\.com/(local|breaking|finance|international|china|sports|racing|wars|columnist|culture|entertainment|special)/.*,requires-body=1,max-size=-1,control-api=1,script-path=https://raw.githubusercontent.com/Marcio2536/surge/main/HK.js,script-update-interval=0
