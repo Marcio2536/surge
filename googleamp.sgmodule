@@ -2,12 +2,13 @@
 #!desc=Disable Google AMP for Surge ios
 
 [Rule]
-URL-REGEX,^https:\/\/www\.google\.com\/async\/amp.*,REJECT
+URL-REGEX,^https:\/\/www\.google\.com(.*)\/async\/amp.*,REJECT
+URL-REGEX,https:\/\/www\.google\.com(.*)?\/xjs.*async.*,REJECT
 
 [URL Rewrite]
-^(https?)://www.google.com/amp/s/(.*) $1://$2 307
+^(https?)://www.google.com(.*)/amp/s/(.*) $1://$2 307
 
 [MITM]
-hostname = %APPEND% www.google.com
+hostname = %APPEND% www.google.com, www.google.com.??
 
 
