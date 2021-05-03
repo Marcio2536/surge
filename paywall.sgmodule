@@ -2,6 +2,17 @@
 #!desc=Bypass Paywall on Surge ios
 
 [Rule]
+DOMAIN-SUFFIX,blueconic.net,REJECT
+DOMAIN,metering.platform.sandiegouniontribune.com,REJECT-DROP
+URL-REGEX,https?;//.*\.telegraph\.co\.uk.*martech.*,REJECT
+URL-REGEX,https?://.*\.medscapestatic\.com\/.*medscape-library\.js,REJECT
+URL-REGEX,https?://.*\.washingtonpost\.com\/.*\/pwapi-proxy\.min\.js,REJECT
+URL-REGEX,https?://cdn\.onesignal\.com\/sdks\/.*\.js,REJECT
+URL-REGEX,https?://(.*)?economist\.com\/engassets\/_next\/static\/chunks\/framework.*\.js,REJECT
+URL-REGEX,^https:\/\/www\.foreignaffairs\.com\/fa_paywall.*,REJECT
+URL-REGEX,https:\/\/giphy\.com\/static\/dist\/runtime.*\.bundle\.js,REJECT
+URL-REGEX,https:\/\/www\.thecourier\.com\.au\/static\/.*\.js,REJECT
+DOMAIN-SUFFIX,firebaseio.com,REJECT-DROP
 URL-REGEX,.*cdn-au\.piano\.io/api/tinypass.*\.js,REJECT
 URL-REGEX,^https:\/\/www\.foreignaffairs\.com\/fa_paywall.*,REJECT
 URL-REGEX,^https:\/\/thediplomat\.com\/dpl-web\/.*paywall.*,REJECT
@@ -43,17 +54,14 @@ URL-REGEX,^https:\/\/zephr\.technologyreview\.com\/wp-json\/.*,REJECT
 DOMAIN-SUFFIX,thirdwx.qlogo.cn,REJECT
 
 [URL Rewrite]
+https?://thediplomat.com https://tdp.marcio.workers.dev 307
 https?://www.barrons.com/articles/(.*) https://www.barrons.com/amp/articles/$1 307
 https?://api.afr.com/graphql.* - reject
-.+\.blueconic\.net\/.+ - reject
-.+\.medscapestatic\.com\/.*medscape-library\.js - reject
 .+\.tinypass\.com\/.+ - reject
-.+\.washingtonpost\.com\/.+\/pwapi-proxy\.min\.js - reject
-(.+\.tinypass\.com\/.+|cdn\.onesignal\.com\/sdks\/.+\.js) - reject
 ^https://(.*)\.wsj\.com/articles/ https://$1\.wsj\.com/amp/articles/ 307
 cdn\.ampproject\.org\/v\d\/amp-access-.+\.js - reject
-.+telegraph\.co\.uk.+martech.+ - reject
-(.+\.tinypass\.com\/.+|economist\.com\/engassets\/_next\/static\/chunks\/framework.+\.js) - reject
+
+
 
 
 [Header Rewrite]
