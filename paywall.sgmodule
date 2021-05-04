@@ -4,7 +4,8 @@
 [Rule]
 DOMAIN-SUFFIX,blueconic.net,REJECT
 DOMAIN,metering.platform.sandiegouniontribune.com,REJECT-DROP
-URL-REGEX,https?;//.*\.telegraph\.co\.uk.*martech.*,REJECT
+URL-REGEX,https?://.*\.tinypass\.com\/.*,REJECT
+URL-REGEX,https?://.*\.telegraph\.co\.uk.*martech.*,REJECT
 URL-REGEX,https?://.*\.medscapestatic\.com\/.*medscape-library\.js,REJECT
 URL-REGEX,https?://.*\.washingtonpost\.com\/.*\/pwapi-proxy\.min\.js,REJECT
 URL-REGEX,https?://cdn\.onesignal\.com\/sdks\/.*\.js,REJECT
@@ -57,7 +58,6 @@ DOMAIN-SUFFIX,thirdwx.qlogo.cn,REJECT
 https?://thediplomat.com https://tdp.marcio.workers.dev 307
 https?://www.barrons.com/articles/(.*) https://www.barrons.com/amp/articles/$1 307
 https?://api.afr.com/graphql.* - reject
-.+\.tinypass\.com\/.+ - reject
 ^https://(.*)\.wsj\.com/articles/ https://$1\.wsj\.com/amp/articles/ 307
 cdn\.ampproject\.org\/v\d\/amp-access-.+\.js - reject
 
