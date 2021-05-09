@@ -150,7 +150,7 @@ cdn\.ampproject\.org header-del Cookie
 https?://.*\.wsj.com header-del Cookie
 https?://telegraph.co.uk header-replace User-Agent "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
 https?://medium.com header-del Cookie
-https?://www.quora.com header-del Cookie
+https?://www.quora.com header-del Referer
 https?://.*\.sina.cn header-del Content-Type
 https?://.*\.sina.com.cn header-del Content-Type
 https?://.*\.douban.com header-replace Accept text/html,website/xhtml+xml,website/xml;q=0.9,*/*;q=0.8
