@@ -1,4 +1,4 @@
-#!name=Cloudflare Accelerator
+#!name=Website Accelerator
 #!desc=Accelerate websites which are blocked in China
 
 [URL Rewrite]
