@@ -79,7 +79,7 @@ https?://thediplomat.com https://tdp.marcio.workers.dev 307
 https?://www.barrons.com/articles/(.*) https://www.barrons.com/amp/articles/$1 307
 https?://api.afr.com/graphql.* - reject
 ^https://(.*)\.wsj\.com/articles/ https://$1\.wsj\.com/amp/articles/ 307
-cdn\.ampproject\.org\/v\d\/amp-access-.+\.js - reject
+https?://cdn\.ampproject\.org\/v\d\/amp-access-.+\.js - reject
 
 
 
