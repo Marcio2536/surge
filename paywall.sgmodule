@@ -4,7 +4,7 @@
 [Rule]
 URL-REGEX,https://www.newstatesman.com/.*paywall.*js.*,REJECT
 URL-REGEX,https:\/\/file\.caixin\.com\/en\/web\/js\/caixin-content\.js,REJECT
-URL-REGEX,https:\/\/www\.bostonglobe\.com\/pf\/dist\/template\/article-right-rail\/default\.js.*,REJECT
+URL-REGEX,https:\/\/www\.bostonglobe\.com\/pf\/dist\/template\/article-(right-rail|opinion|rail-cv)\/default\.js.*,REJECT
 URL-REGEX,https:\/\/assets\.bwbx\.io\/.*bundle.*,REJECT
 URL-REGEX,https://.*\.(chicagobusiness|crainsnewyork|crainsdetroit)\.com\/.+\/js\/js_.+\.js,REJECT
 URL-REGEX,https:\/\/.*\.newsmemory\.com\/\?meter.*,REJECT
@@ -13,6 +13,7 @@ URL-REGEX,https:\/\/www\.hudsonvalley360\.com\/shared-content\/art\/tncms\/subsc
 URL-REGEX,https?://.*\.townnews\.com/.*subscription.*,REJECT
 URL-REGEX,https:\/\/hk\.nextmgz\.com\/themes\/classic\/lib\/jquery\/blocksit\.min\.js,REJECT
 URL-REGEX,https:\/\/contributor\.google\.com\/scripts\/.*\/loader\.js,REJECT
+DOMAIN,idp.scientificamerican.com,REJECT
 DOMAIN-SUFFIX,fundingchoicesmessages.google.com,REJECT
 DOMAIN,static.omoplanet.com,REJECT
 DOMAIN-SUFFIX,mycapture.com,REJECT
