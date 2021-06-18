@@ -2,8 +2,8 @@
 #!desc=Bypass Paywall on Surge ios
 
 [Rule]
-URL-REGEX,^https:\/\/www\.thenewatlantis\.com\/wp-content\/themes\/thenewatlantis\/js\/(gate|donate)\.js.*,REJECT 
-URL-REGEX,^https:\/\/api\.watoday\.com\.au\/graphql.*,REJECT
+URL-REGEX,https:\/\/www\.thenewatlantis\.com\/wp-content\/themes\/thenewatlantis\/js\/(gate|donate)\.js.*,REJECT 
+URL-REGEX,https:\/\/api\.watoday\.com\.au\/graphql.*,REJECT
 URL-REGEX,https://www.newstatesman.com/.*paywall.*js.*,REJECT
 URL-REGEX,https:\/\/file\.caixin\.com\/en\/web\/js\/caixin-content\.js,REJECT
 URL-REGEX,https:\/\/www\.bostonglobe\.com\/pf\/dist\/template\/article-(right-rail|opinion|rail-cv)\/default\.js.*,REJECT
