@@ -2,6 +2,8 @@
 #!desc=Bypass Paywall on Surge ios
 
 [Rule]
+URL-REGEX,https:\/\/thediplomat\.com\/dpl-web\/.*paywall.*,REJECT
+URL-REGEX,https:\/\/thediplomat\.com\/dpl-web.*firebase-app\.min\.js,REJECT
 URL-REGEX,https:\/\/euobserver\.com\/js\/euobs\.js.*,REJECT
 URL-REGEX,https://.*\.hilltimes\.com\/.+\/js\/loadingoverlay\/loadingoverlay\.min\.js,REJECT
 URL-REGEX,https:\/\/www\.thenewatlantis\.com\/wp-content\/themes\/thenewatlantis\/js\/(gate|donate)\.js.*,REJECT 
@@ -83,7 +85,6 @@ DOMAIN-SUFFIX,thirdwx.qlogo.cn,REJECT
 
 [URL Rewrite]
 https://asiatimes.com/(\d+)/(.*) https://asiatimes.com/$1/$2/?amp_markup=1 header
-https?://thediplomat.com https://tdp.marcio.workers.dev 307
 https?://www.barrons.com/articles/(.*) https://www.barrons.com/amp/articles/$1 307
 https?://api.afr.com/graphql.* - reject
 ^https://(.*)\.wsj\.com/articles/ https://$1\.wsj\.com/amp/articles/ 307
