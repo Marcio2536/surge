@@ -19,7 +19,7 @@ const elecJSPack = function(){let article_body_subscribed = document.querySelect
   document.dispatchEvent(new CustomEvent('bpc_event', {}));
 $done()}()</script></body>`)
 
-  console.log('Addexample.com')
+  console.log('Success')
 }
 
 $done({ body })
