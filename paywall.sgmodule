@@ -23,6 +23,8 @@ URL-REGEX,https:\/\/www\.hudsonvalley360\.com\/shared-content\/art\/tncms\/subsc
 URL-REGEX,https?://.*\.townnews\.com/.*subscription.*,REJECT
 URL-REGEX,https:\/\/hk\.nextmgz\.com\/themes\/classic\/lib\/jquery\/blocksit\.min\.js,REJECT
 URL-REGEX,https:\/\/contributor\.google\.com\/scripts\/.*\/loader\.js,REJECT
+DOMAIN-SUFFIX,wallkit.net,REJECT
+DOMAIN-SUFFIX,cxense.com,REJECT
 DOMAIN,graphql.haaretz.com,REJECT
 DOMAIN,smartwall.theglobeandmail.com,REJECT
 DOMAIN,idp.scientificamerican.com,REJECT
