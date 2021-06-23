@@ -1,8 +1,0 @@
-#!name=Disable Google SafeSearch
-#!desc=Disable Google SafeSearch for Surge ios
-
-[MITM]
-hostname = %APPEND% www.google.com, www.google.com.??
-
-[Script]
-Disable Google SafeSearch = type=http-response,pattern=https?://www.google.com(.*)?/search.*,requires-body=1,max-size=-1,control-api=1,script-path=https://raw.githubusercontent.com/Marcio2536/surge/main/safesearch.js,script-update-interval=0
