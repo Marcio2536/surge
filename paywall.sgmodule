@@ -167,7 +167,6 @@ https?://www.clarionledger.com header-replace User-Agent "Mozilla/5.0 (compatibl
 https?://.*\.ft\.com header-add Referer https://t.co/x?amp=1
 https?://sloanreview.mit.edu header-add Referer https://t.co/x?amp=1
 https?://www.fnlondon.com header-add Referer https://t.co/x?amp=1
-https?://(.*)?mexiconewsdaily.com header-del Cookie
 https?://www.heraldsun.com.au header-add X-Forwarded-For 66.249.66.1
 https?://www.heraldsun.com.au header-replace User-Agent "Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible ; Googlebot/2.1 ; +http://www.google.com/bot.html)"
 https?://www.heraldsun.com.au header-del Cookie
