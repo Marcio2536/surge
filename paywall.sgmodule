@@ -90,7 +90,7 @@ URL-REGEX,^https:\/\/caltimes-lat-marketing-assets-dev\.s3-us-west-2\.amazonaws\
 URL-REGEX,^https:\/\/assets\.bwbx\.io\/s3\/fence\/v4\/.*js$,REJECT
 DOMAIN,analytics.appledaily.com.hk,REJECT
 DOMAIN-SUFFIX,queryly.com,REJECT
-DOMAIN-SUFFIX,azureedge.net,REJECT
+DOMAIN,loader-cdn.azureedge.net,REJECT
 URL-REGEX,^https:\/\/zephr\.technologyreview\.com\/wp-json\/.*,REJECT
 DOMAIN-SUFFIX,thirdwx.qlogo.cn,REJECT
 
