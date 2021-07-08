@@ -98,10 +98,15 @@ URL-REGEX,^https:\/\/zephr\.technologyreview\.com\/wp-json\/.*,REJECT
 DOMAIN-SUFFIX,thirdwx.qlogo.cn,REJECT
 
 [URL Rewrite]
+(^https://www\.nationalreview\.com/corner/.*/(?<!amp/)$) $1amp/ 307
+(^https://www\.nationalreview\.com/news/.*/(?<!amp/)$) $1amp/ 307
+(^https://www\.nationalreview\.com/\d+/.*/(?<!amp/)$) $1amp/ 307
+(^https://www\.nationalreview\.com/magazine/.*/(?<!amp/)$) $1amp/ 307
+https:\/\/www\.adweek\.com\/(media|brand-marketing|social-marketing|creativity|commerce|programmatic|inside-the-brand|convergent-tv|agencies)\/([^/]+)\/(?!amp) https://www.adweek.com/$1/$2/amp/ 307
 https://asiatimes.com/(\d+)/(.*) https://asiatimes.com/$1/$2/?amp_markup=1 header
 https?://www.barrons.com/articles/(.*) https://www.barrons.com/amp/articles/$1 307
 https?://api.afr.com/graphql.* - reject
-^https://(.*)\.wsj\.com/articles/ https://$1\.wsj\.com/amp/articles/ 307
+https://(.*)\.wsj\.com/articles/ https://$1\.wsj\.com/amp/articles/ 307
 https?://cdn\.ampproject\.org\/v\d\/amp-access-.+\.js - reject
 
 
@@ -268,11 +273,9 @@ hostname = %APPEND% www.nationalreview.com, cooking.nytimes.com, www.nknews.org,
 [Script]
 蘋果日報 = type=http-response,pattern=https?:\/\/hk\.(feature\.)?appledaily\.com/(local|breaking|finance|international|china|sports|racing|wars|columnist|culture|entertainment|special|covid19)/.*,requires-body=1,max-size=-1,control-api=1,script-path=https://raw.githubusercontent.com/Marcio2536/surge/main/HK.js,script-update-interval=0
 財新解鎖 = type=http-response,pattern=^https:\/\/mappsv5\.caixin\.com\/articlev.*,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/Marcio2536/rules/master/caixincn.js,script-update-interval=0
-Adweek = type=http-response,pattern=https://www.adweek.com,requires-body=1,max-size=-1,control-api=1,script-path=https://raw.githubusercontent.com/Marcio2536/surge/main/adweek.js,script-update-interval=0
 American Banker = type=http-response,pattern=https://www.americanbanker.com,requires-body=1,max-size=-1,control-api=1,script-path=https://raw.githubusercontent.com/Marcio2536/surge/main/americanbanker.js,script-update-interval=0
 Caixin = type=http-response,pattern=https://www.caixinglobal.com/[0-9]+,requires-body=1,max-size=-1,control-api=1,script-path=https://raw.githubusercontent.com/Marcio2536/surge/main/Caixin.js,script-update-interval=0
 Haaretz = type=http-response,pattern=https://www.haaretz.(com|co\.il)/israel-news/.*,requires-body=1,max-size=-1,control-api=1,script-path=https://raw.githubusercontent.com/Marcio2536/surge/main/haaretz.js,script-update-interval=0
-National Review = type=http-response,pattern=https://www.nationalreview.com/.+,requires-body=1,max-size=-1,control-api=1,script-path=https://raw.githubusercontent.com/Marcio2536/surge/main/nationalreview.js,script-update-interval=0
 Tech in Asia = type=http-response,pattern=https://www.techinasia.com/.+,requires-body=1,max-size=1048576,control-api=1,script-path=https://raw.githubusercontent.com/Marcio2536/surge/main/techinasia.js,script-update-interval=0
 The Globe and Mail = type=http-response,pattern=https://www.theglobeandmail.com/.+/article-.+,requires-body=1,max-size=-1,control-api=1,script-path=https://raw.githubusercontent.com/Marcio2536/surge/main/theglobeandmail.js,script-update-interval=0
 The New Atlantis = type=http-response,pattern=https://www.thenewatlantis.com/publications,requires-body=1,max-size=0,control-api=1,script-path=https://raw.githubusercontent.com/Marcio2536/surge/main/thenewatlantis.js,script-update-interval=0
