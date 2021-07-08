@@ -27,6 +27,8 @@ URL-REGEX,https:\/\/www\.hudsonvalley360\.com\/shared-content\/art\/tncms\/subsc
 URL-REGEX,https?://.*\.townnews\.com/.*subscription.*,REJECT
 URL-REGEX,https:\/\/hk\.nextmgz\.com\/themes\/classic\/lib\/jquery\/blocksit\.min\.js,REJECT
 URL-REGEX,https:\/\/contributor\.google\.com\/scripts\/.*\/loader\.js,REJECT
+DOMAIN,s.tradingview.com,REJECT
+DOMAIN-SUFFIX,youmaker.com,REJECT
 DOMAIN,datawrapper.dwcdn.net,REJECT
 DOMAIN-SUFFIX,livechatinc.com,REJECT
 DOMAIN,datawrapper.dwcdn.net,REJECT 
@@ -46,7 +48,7 @@ DOMAIN-SUFFIX,piano.io,REJECT
 DOMAIN,policy.appledaily.com,REJECT
 DOMAIN-SUFFIX,blueconic.net,REJECT
 DOMAIN,metering.platform.sandiegouniontribune.com,REJECT-DROP
-DOMAIN-SUFFIX,onecount.net,REJECT-DROP
+DOMAIN-SUFFIX,onecount.net,REJECT
 URL-REGEX,https:\/\/www\.reuters\.com\/arc\/subs\/p\.min\.js,REJECT
 URL-REGEX,https?://.*\.tinypass\.com\/.*,REJECT
 URL-REGEX,https?://.*\.telegraph\.co\.uk.*martech.*,REJECT
