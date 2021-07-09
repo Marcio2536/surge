@@ -45,9 +45,9 @@ https?://www.sunherald.com header-del Cookie
 https?://www.star-telegram.com header-add X-Forwarded-For 66.249.66.1
 https?://www.star-telegram.com header-replace User-Agent "Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible ; Googlebot/2.1 ; +http://www.google.com/bot.html)"
 https?://www.star-telegram.com header-del Cookie
-https?://miamiherald.com header-add X-Forwarded-For 66.249.66.1
-https?://miamiherald.com header-replace User-Agent "Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible ; Googlebot/2.1 ; +http://www.google.com/bot.html)"
-https?://miamiherald.com header-del Cookie
+https?://www.miamiherald.com header-add X-Forwarded-For 66.249.66.1
+https?://www.miamiherald.com header-replace User-Agent "Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible ; Googlebot/2.1 ; +http://www.google.com/bot.html)"
+https?://www.miamiherald.com header-del Cookie
 https?://www.kentucky.com header-add X-Forwarded-For 66.249.66.1
 https?://www.kentucky.com header-replace User-Agent "Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible ; Googlebot/2.1 ; +http://www.google.com/bot.html)"
 https?://www.kentucky.com header-del Cookie
