@@ -109,7 +109,7 @@ URL-REGEX,^https:\/\/zephr\.technologyreview\.com\/wp-json\/.*,REJECT
 DOMAIN-SUFFIX,thirdwx.qlogo.cn,REJECT
 
 [URL Rewrite]
-(https://www.nationalreview.com/(news|corner|magazine|\d+)/.*)\?utm_source.* $1 307
+(https://www.nationalreview.com/(news|corner|magazine|\d+)/.*)\?utm_source.* $1amp/ 307
 (^https://www\.nationalreview\.com/(news|magazine|corner|\d+)/.*/(?<!amp/)$) $1amp/ 307
 https:\/\/www\.adweek\.com\/(media|brand-marketing|social-marketing|creativity|commerce|programmatic|inside-the-brand|convergent-tv|agencies)\/([^/]+)\/(?!amp) https://www.adweek.com/$1/$2/amp/ 307
 https://asiatimes.com/(\d+)/(.*) https://asiatimes.com/$1/$2/?amp_markup=1 header
